@@ -5,13 +5,13 @@ module flipflopD(D,clk,q,qb);
 	output qb;
 	wire a;
 	wire b;
-	reg q;
-	reg qb;
+	wire q;
+	wire qb;
 	
-	always @(posedge clock)
+//	always @(posedge clock)
 
 	nand U0(a,D,clk);
-	nand U1(b,not D,clk);
+	nand U1(b,!D,clk);
 	nand U2(q,a,qb);
 	nand U3(qb,b,q);
 endmodule
